@@ -4,3 +4,11 @@ body{
 .bg-primary{
 background: #009688 !important;
 }
+
+.banner{
+    width:100%;
+    height:93vh;
+    background:black;
+    color:white;
+
+}
