@@ -11,5 +11,9 @@ background: #009688 !important;
     background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../images/background.jpg);
     background-size:cover;
     color:white;
+}
 
+.mycard {
+padding:20px;
+background: #FFFFFF;
 }
