@@ -50,6 +50,9 @@ public class HomeController {
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, @RequestParam(value = "agreement",defaultValue = "false")
     boolean agreement, Model model ,  HttpSession session){
 
+
+//        this field for agreement checkbox clicked or not  if it's checked then than u can submit form
+//        but if it is not checked than it gives the massage that "checkbox is not checked"
         try {
             if(!agreement)
             {
@@ -57,6 +60,7 @@ public class HomeController {
                 throw  new Exception("You have not agreed the term and conditions");
             }
 
+//if any error in name field than it is automatic store previous data in other field
             if (bindingResult.hasErrors())
             {
                 System.out.println("Error" + bindingResult.toString());
@@ -78,6 +82,8 @@ public class HomeController {
             model.addAttribute("user "+ result);
 
             model.addAttribute("user",new User());
+
+//            set all value in session
             session.setAttribute("message",new Message("Successfully Registered !!" , "alert-success"));
             return "signup";
 
