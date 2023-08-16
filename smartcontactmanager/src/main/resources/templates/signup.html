@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      th:replace="base::Layout(~{::section})">
+      th:replace="~{base::Layout(~{::section})}">
 <head>
     <meta charset="UTF-8">
     <title>This is about Page</title>
@@ -14,7 +14,13 @@
           <div class="row">
               <div class="col-md-8 offset-md-2">
 
-                 <div class="mycard mt-2 ">
+                 <div class="mycard mt-1 ">
+
+                     <div th:if="${session.message}"  th:classappend="${session.message.type}" class="alert" role="alert">
+                         <p th:text="${session.message.content}"></p>
+
+                         <th:block th:text="${session.removeAttribute('message')}"></th:block>
+                     </div>
 
                      <div class="container text-center">
                          <img  style="width: 80px;" src="" th:src="@{/images/membership.png}" alt="">
