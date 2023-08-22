@@ -1,6 +1,6 @@
 package com.smart.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "CONTACT")
