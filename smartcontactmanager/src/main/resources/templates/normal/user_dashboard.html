@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>User Dashboard</title>
@@ -10,5 +10,9 @@
 <h1>
     This is your private dashboard
 </h1>
+
+<h1> User Name <span th:text="${user.name}"></span> </h1>
+<h1> User Email <span th:text="${user.email}"></span> </h1>
+<h1> <a href="" th:href="@{/Logout}">Logout</a> </h1>
 </body>
 </html>
